@@ -23,9 +23,6 @@ log.txt
 /platforms
 /plugins
 
-# Angular
-.angular/*
-
 # Compiled output
 /dist
 /tmp

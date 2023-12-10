@@ -7,19 +7,27 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
+      <ion-item>
       <ion-title size="large">activities</ion-title>
+    </ion-item>
     </ion-toolbar>
   </ion-header>
+
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+    <ion-col>
+  <ion-item>
+    <ion-label fixed id = "name">
+      name
+    </ion-label>
+</ion-item>
 
   <ion-img id = "dog"
     src="../assets/reg_neutral.png"
     alt="Neutral dog face">
   </ion-img>
- 
-  <ion-label id = "name">
-    name
-  </ion-label>
 
+  <ion-item>
   <ion-list>
     <ion-item>
       <ion-select aria-label="name" interface="action-sheet" placeholder="select name" (ionChange)="onNameChange($event)">
@@ -29,13 +37,23 @@
       </ion-select>
     </ion-item>
   </ion-list>
+</ion-item>
+</ion-col>
+</ion-row>
+</ion-grid>
 
-  <ion-fab horizontal = "center" vertical =  "bottom">
-      <ion-fab-button (click)="presentFeedAlert()" color = "tertiary">feed</ion-fab-button>
-      <ion-fab-button (click)="presentWashAlert()" color = "tertiary">wash</ion-fab-button>
-      <ion-fab-button (click)="presentPlayAlert()" color = "tertiary">play</ion-fab-button>
-      <ion-fab-button (click)="presentPetAlert()"  color = "tertiary">pet</ion-fab-button>
-      <ion-fab-button (click)="sadDog()" color = "danger">end game</ion-fab-button>
-  </ion-fab>
+  <ion-grid [fixed]="true">
+    <ion-row>
+      <ion-fab horizontal = "center">
+        <ion-col><ion-button (click)="presentFeedAlert()" color = "tertiary">feed</ion-button></ion-col>
+        <ion-col><ion-button (click)="presentWashAlert()" color = "tertiary">wash</ion-button></ion-col>
+        <ion-col><ion-button (click)="presentPlayAlert()" color = "tertiary">play</ion-button></ion-col>
+        <ion-col><ion-button (click)="presentPetAlert()"  color = "tertiary">pet</ion-button></ion-col>
+        <ion-col><ion-button (click)="sadDog()" color = "danger">end game</ion-button></ion-col>
+    </ion-fab>
+    </ion-row>
+  </ion-grid>
+
+
 
 </ion-content>

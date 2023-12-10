@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>activities</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">activities</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+    <ion-img id = "dog"
+    src="../assets/neutral_brown.png"
+    alt="Neutral dog face">
+  </ion-img>
+
+  <ion-fab horizontal = "center" vertical =  "bottom">
+      <ion-fab-button (click)="presentFeedAlert()">feed</ion-fab-button>
+      <ion-fab-button (click)="presentWashAlert()">wash</ion-fab-button>
+      <ion-fab-button (click)="presentPlayAlert()">play</ion-fab-button>
+      <ion-fab-button (click)="presentPetAlert()">pet</ion-fab-button>
+      <ion-fab-button (click)="presentendGameAlert()">end game</ion-fab-button>
+  </ion-fab>
+
+</ion-content>

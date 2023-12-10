@@ -1,5 +1,7 @@
 {
-  "name": "ionic-app-base",
-  "integrations": {},
+  "name": "FetchyFriend",
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

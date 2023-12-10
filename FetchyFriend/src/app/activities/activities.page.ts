@@ -201,6 +201,7 @@ export class ActivitiesPage implements OnInit {
 
     if (nameLabel && this.dogName) {
       nameLabel.innerText = this.dogName;
+      nameLabel.style.backgroundColor = 'rgba(160, 191, 220, 0.326)';
     }
   }
 

@@ -164,20 +164,35 @@ export class ActivitiesPage implements OnInit {
 
   //might change this so the sad dog pic comes up first, and alert pops up after a few second delay
   async presentEndGameAlert() {
+
     const delayTime = 1000;
+
+    // Use setTimeout to create a delay
+    setTimeout(async () => {
     const alert = await this.alertController.create({
       header: "End Game?",
       message: "Select 'Cancel' to continue playing.",
-      buttons: ['Cancel', 'End Game']
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            // Handle 'Cancel' button click
+            console.log('Continue playing');
+          }
+        },
+        {
+          text: 'End Game',
+          handler: () => {
+            // Handle 'End Game' button click after a delay
+              this.router.navigate(['/home']);
+          }
+        }
+      ]
     });
   
     await alert.present();
-  
-    // Assuming you want to log the role when the alert is dismissed after a delay
-    setTimeout(async () => {
-      const { role } = await alert.onDidDismiss();
-      this.router.navigate(['/home']);
-    }, delayTime);
+  }, delayTime);
   }
 
   onNameChange(event: any) {

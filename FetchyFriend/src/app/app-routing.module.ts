@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { HomePage } from '../app/home/home.page';
 import { ActivitiesPage } from '../app/activities/activities.page';
+import { SelectionPage } from './selection/selection.page';
 
 
 const routes: Routes = [
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'activities',
     loadChildren: () => import('./activities/activities.module').then( m => m.ActivitiesPageModule)
+  },
+  {
+    path: 'selection',
+    loadChildren: () => import('./selection/selection.module').then( m => m.SelectionPageModule)
   },
 ];
 

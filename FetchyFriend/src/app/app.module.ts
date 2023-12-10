@@ -7,6 +7,7 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ActivitiesPageModule } from './activities/activities.module';
+import { SelectionPageModule } from './selection/selection.module';
 
 @NgModule({
   declarations: [AppComponent],

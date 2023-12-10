@@ -11,17 +11,31 @@
     </ion-toolbar>
   </ion-header>
 
-    <ion-img id = "dog"
-    src="../assets/neutral_brown.png"
+  <ion-img id = "dog"
+    src="../assets/reg_neutral.png"
     alt="Neutral dog face">
   </ion-img>
+ 
+  <ion-label id = "name">
+    name
+  </ion-label>
+
+  <ion-list>
+    <ion-item>
+      <ion-select aria-label="name" interface="action-sheet" placeholder="select name" (ionChange)="onNameChange($event)">
+        <ion-select-option value="Smokey">Smokey</ion-select-option>
+        <ion-select-option value="Teddy">Teddy</ion-select-option>
+        <ion-select-option value="Bear">Bear</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
 
   <ion-fab horizontal = "center" vertical =  "bottom">
       <ion-fab-button (click)="presentFeedAlert()">feed</ion-fab-button>
       <ion-fab-button (click)="presentWashAlert()">wash</ion-fab-button>
       <ion-fab-button (click)="presentPlayAlert()">play</ion-fab-button>
       <ion-fab-button (click)="presentPetAlert()">pet</ion-fab-button>
-      <ion-fab-button (click)="presentendGameAlert()">end game</ion-fab-button>
+      <ion-fab-button (click)="sadDog()">end game</ion-fab-button>
   </ion-fab>
 
 </ion-content>

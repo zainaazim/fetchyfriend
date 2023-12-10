@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>selection</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">selection</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-img (click)="setDogTypeRegular()"
+  id = "reg"
+  src="../assets/reg_happy.png"
+  alt="happy light brown dog face">
+  </ion-img>
+
+  <ion-img (click)="setDogTypeBW()"
+  id = "bw"
+  src="../assets/bw_happy.png"
+  alt="happy black and white dog face">
+  </ion-img>
+
+  <ion-img (click)="setDogTypeBrown()"
+  id = "brown"
+  src="../assets/brown_happy.png"
+  alt="happy dark brown dog face">
+  </ion-img>
+
+</ion-content>

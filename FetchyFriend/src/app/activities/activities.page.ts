@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { DogService } from '../dog.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-activities',
@@ -7,15 +9,39 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./activities.page.scss'],
 })
 export class ActivitiesPage implements OnInit {
+  private dogType: string;
+  dogName: string = "name";
 
-  constructor(private alertController: AlertController) { }
+  constructor(private alertController: AlertController, private dogService: DogService, private router: Router) { 
+
+    this.dogType = "reg";
+  }
 
   ngOnInit() {
+    this.presentNameAlert();
+    this.getDogType();
+    const imgElement = document.getElementById("dog") as HTMLImageElement | null;
+
+    if (imgElement && this.dogType === "reg") {
+      imgElement.src = "../assets/reg_neutral.png";
+    }
+
+    if (imgElement && this.dogType === "bw") {
+      imgElement.src = "../assets/bw_neutral.png";
+    }
+
+    if (imgElement && this.dogType === "brown") {
+      imgElement.src = "../assets/brown_neutral.png";
+    }
+  }
+
+  getDogType(){
+    this.dogType = this.dogService.getDogType();
   }
 
   async presentFeedAlert() {
     const alert = await this.alertController.create({
-      header: '[insert name here] has been fed.',
+      header: this.dogName + ' has been fed.',
       message: "Good job. You're a great owner!",
       buttons: ['wee!']
     });
@@ -25,17 +51,25 @@ export class ActivitiesPage implements OnInit {
 
     const imgElement = document.getElementById("dog") as HTMLImageElement | null;
 
-    if (imgElement) {
-      imgElement.src = "../assets/food_brown.png";
+    if (imgElement && this.dogType === "reg") {
+      imgElement.src = "../assets/reg_feed.png";
+    }
+
+    if (imgElement && this.dogType === "bw") {
+      imgElement.src = "../assets/bw_feed.png";
+    }
+
+    if (imgElement && this.dogType === "brown") {
+      imgElement.src = "../assets/brown_feed.png";
     }
 
   }
 
   async presentWashAlert() {
     const alert = await this.alertController.create({
-      header: '[insert name here] has been washed.',
-      message: "Awww, he's not too happy!",
-      buttons: ['wee!']
+      header: this.dogName + ' has been washed.',
+      message: "Awww, " + this.dogName + "'s not very happy!",
+      buttons: ['uh oh!']
     });
 
     await alert.present();
@@ -43,17 +77,25 @@ export class ActivitiesPage implements OnInit {
 
     const imgElement = document.getElementById("dog") as HTMLImageElement | null;
 
-    if (imgElement) {
-      imgElement.src = "../assets/wash_brown.png";
+    if (imgElement && this.dogType === "reg") {
+      imgElement.src = "../assets/reg_wash.png";
+    }
+
+    if (imgElement && this.dogType === "bw") {
+      imgElement.src = "../assets/bw_wash.png";
+    }
+
+    if (imgElement && this.dogType === "brown") {
+      imgElement.src = "../assets/brown_wash.png";
     }
 
   }
 
   async presentPlayAlert() {
     const alert = await this.alertController.create({
-      header: "You've tossed a ball to [insert name here].",
-      message: "[insert name here] loves fetch. Good job!",
-      buttons: ['wee!']
+      header: "You've tossed a ball to " + this.dogName + ".",
+      message: this.dogName + " loves fetch. Good job!",
+      buttons: ['yay!']
     });
 
     await alert.present();
@@ -61,16 +103,24 @@ export class ActivitiesPage implements OnInit {
 
     const imgElement = document.getElementById("dog") as HTMLImageElement | null;
 
-    if (imgElement) {
-      imgElement.src = "../assets/ball_brown.png";
+    if (imgElement && this.dogType === "reg") {
+      imgElement.src = "../assets/reg_play.png";
+    }
+
+    if (imgElement && this.dogType === "bw") {
+      imgElement.src = "../assets/bw_play.png";
+    }
+
+    if (imgElement && this.dogType === "brown") {
+      imgElement.src = "../assets/brown_play.png";
     }
 
   }
 
   async presentPetAlert() {
     const alert = await this.alertController.create({
-      header: "You've petted [insert name here].",
-      message: "Great job! Your pet feels loved.",
+      header: "You pet " + this.dogName + ".",
+      message: "Great job! " + this.dogName + " feels loved.",
       buttons: ['wee!']
     });
 
@@ -79,28 +129,75 @@ export class ActivitiesPage implements OnInit {
 
     const imgElement = document.getElementById("dog") as HTMLImageElement | null;
 
-    if (imgElement) {
-      imgElement.src = "../assets/heart_brown.png";
+    if (imgElement && this.dogType === "reg") {
+      imgElement.src = "../assets/reg_pet.png";
+    }
+
+    if (imgElement && this.dogType === "bw") {
+      imgElement.src = "../assets/bw_pet.png";
+    }
+
+    if (imgElement && this.dogType === "brown") {
+      imgElement.src = "../assets/brown_pet.png";
     }
 
   }
 
-  //might change this so the sad dog pic comes up first, and alert pops up after a few second delay
-  async presentendGameAlert() {
-    const alert = await this.alertController.create({
-      header: 'Ending Game',
-      message: "Select 'Cancel' to keep playing.",
-      buttons: ['Cancel', 'Ok']
-    });
-
-    await alert.present();
-    const { role } = await alert.onDidDismiss();
+  sadDog(){
 
     const imgElement = document.getElementById("dog") as HTMLImageElement | null;
 
-    if (imgElement) {
-      imgElement.src = "../assets/sad_brown.png";
+    if (imgElement && this.dogType === "reg") {
+      imgElement.src = "../assets/reg_sad.png";
     }
 
+    if (imgElement && this.dogType === "bw") {
+      imgElement.src = "../assets/bw_sad.png";
+    }
+
+    if (imgElement && this.dogType === "brown") {
+      imgElement.src = "../assets/brown_sad.png";
+    }
+
+    this.presentEndGameAlert();
   }
+
+  //might change this so the sad dog pic comes up first, and alert pops up after a few second delay
+  async presentEndGameAlert() {
+    const delayTime = 1000;
+    const alert = await this.alertController.create({
+      header: "End Game?",
+      message: "Select 'Cancel' to continue playing.",
+      buttons: ['Cancel', 'End Game']
+    });
+  
+    await alert.present();
+  
+    // Assuming you want to log the role when the alert is dismissed after a delay
+    setTimeout(async () => {
+      const { role } = await alert.onDidDismiss();
+      this.router.navigate(['/home']);
+    }, delayTime);
+  }
+
+  onNameChange(event: any) {
+    this.dogName = event.detail.value;
+    const nameLabel = document.getElementById("name") as HTMLImageElement | null;
+
+    if (nameLabel && this.dogName) {
+      nameLabel.innerText = this.dogName;
+    }
+  }
+
+  async presentNameAlert() {
+    const alert = await this.alertController.create({
+      header: "Select a Name",
+      message: 'Select a name using the dropdown below. The default is "name."',
+      buttons: ['Ok']
+    });
+
+    await alert.present();
+
+  }
+
 }

@@ -1,3 +1,5 @@
+<video id="htvideo" #htvideo name="htvideo" class="videobox" autoplay="autoplay"></video>
+
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
@@ -14,14 +16,15 @@
   </ion-header>
 
   <ion-img
-  src="../assets/reg_happy.png"
-  alt="dog face">
+    src="../assets/reg_happy.png"
+    alt="dog face">
   </ion-img>
 
   <ion-fab>
-  <ion-fab-button routerLink="/selection" color = "tertiary">
-    <ion-icon name="play"></ion-icon>
-  </ion-fab-button>
-</ion-fab>
+    <!-- Takes us to /selection -->
+    <ion-fab-button routerLink="/selection" color = "tertiary">
+      <ion-icon name="play"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
 </ion-content>

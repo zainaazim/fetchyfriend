@@ -8,39 +8,39 @@
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-item>
-      <ion-title size="large">activities</ion-title>
-    </ion-item>
+        <ion-title size="large">activities</ion-title>
+      </ion-item>
     </ion-toolbar>
   </ion-header>
 
   <ion-grid>
     <ion-row class="ion-align-items-center">
-    <ion-col>
-  <ion-item>
-    <ion-label fixed id = "name">
-      name
-    </ion-label>
-</ion-item>
+      <ion-col>
+        <ion-item>
+          <ion-label fixed id = "name">
+            name
+          </ion-label>
+        </ion-item>
 
-  <ion-img id = "dog"
-    src="../assets/reg_neutral.png"
-    alt="Neutral dog face">
-  </ion-img>
+        <ion-img id = "dog"
+          src="../assets/reg_neutral.png"
+          alt="Neutral dog face">
+        </ion-img>
 
-  <ion-item>
-  <ion-list>
-    <ion-item>
-      <ion-select aria-label="name" interface="action-sheet" placeholder="select name" (ionChange)="onNameChange($event)">
-        <ion-select-option value="Smokey">Smokey</ion-select-option>
-        <ion-select-option value="Teddy">Teddy</ion-select-option>
-        <ion-select-option value="Bear">Bear</ion-select-option>
-      </ion-select>
-    </ion-item>
-  </ion-list>
-</ion-item>
-</ion-col>
-</ion-row>
-</ion-grid>
+        <ion-item>
+          <ion-list>
+            <ion-item>
+              <ion-select aria-label="name" interface="action-sheet" placeholder="select name" (ionChange)="onNameChange($event)">
+                <ion-select-option value="Smokey">Smokey</ion-select-option>
+                <ion-select-option value="Teddy">Teddy</ion-select-option>
+                <ion-select-option value="Bear">Bear</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
   <ion-grid [fixed]="true">
     <ion-row>

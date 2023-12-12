@@ -16,7 +16,7 @@ export class ActivitiesPage implements OnInit {
   @Output() onPrediction = new EventEmitter<PredictionEvent>();
   @ViewChild('htvideo') video!: ElementRef;
   @ViewChild('mySelect') mySelect!: IonSelect;
-  SAMPLERATE: number = 500; 
+  SAMPLERATE: number = 2000; 
   
   detectedGesture: string = "None";
   width: string = "400";

@@ -14,7 +14,7 @@ export class SelectionPage implements OnInit {
 
   @Output() onPrediction = new EventEmitter<PredictionEvent>();
   @ViewChild('htvideo') video!: ElementRef;
-  SAMPLERATE: number = 500; 
+  SAMPLERATE: number = 2000; 
   
   detectedGesture: string = "None";
   width: string = "400";

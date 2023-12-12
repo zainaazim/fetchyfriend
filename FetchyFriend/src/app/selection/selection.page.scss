@@ -16,3 +16,10 @@ ion-img{
 #brown{
     background-color: rgba(220, 194, 240, 0.547);
 }
+
+#custom-button {
+    --background: #81a6e1;
+    --background-activated: #a3e681;
+    --background-hover: #a3e681;
+    --color: rgb(255, 255, 255);
+  }

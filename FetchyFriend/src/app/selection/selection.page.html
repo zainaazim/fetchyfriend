@@ -1,3 +1,5 @@
+<video id="htvideo" #htvideo name="htvideo" class="videobox" autoplay="autoplay"></video>
+
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>selection</ion-title>
@@ -33,5 +35,12 @@
       </ion-img>
     </ion-col>
   </ion-grid>
+
+  <ion-fab horizontal = "end" vertical = "bottom">
+    <!-- information button -->
+    <ion-fab-button size="small" id = "custom-button" (click)  = presentInformationAlert()>
+      <ion-icon name="information-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
 </ion-content>

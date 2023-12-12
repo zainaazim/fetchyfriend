@@ -1,3 +1,5 @@
+<video #htvideo></video>
+
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>activities</ion-title>
@@ -30,7 +32,7 @@
         <ion-item>
           <ion-list>
             <ion-item>
-              <ion-select aria-label="name" interface="action-sheet" placeholder="select name" (ionChange)="onNameChange($event)">
+              <ion-select id = "select" aria-label="name" interface="action-sheet" placeholder="select name" (ionChange)="onNameChange($event)">
                 <ion-select-option value="Smokey">Smokey</ion-select-option>
                 <ion-select-option value="Teddy">Teddy</ion-select-option>
                 <ion-select-option value="Bear">Bear</ion-select-option>
@@ -54,6 +56,11 @@
     </ion-row>
   </ion-grid>
 
-
+  <ion-fab horizontal = "end" vertical = "bottom">
+    <!-- information button -->
+    <ion-fab-button size="small" id = "custom-button" (click)  = presentInformationAlert()>
+      <ion-icon name="information-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
 </ion-content>

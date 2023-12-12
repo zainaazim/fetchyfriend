@@ -3,10 +3,6 @@ ion-fab {
     flex-direction: row;
   }
 
-ion-fab-button{
-
-    margin-bottom: 10em;
-}
 #dog{
 
     margin-top: 1em;
@@ -27,3 +23,10 @@ ion-list{
 ion-title{
     text-align: center;
 }
+
+#custom-button {
+    --background: #81a6e1;
+    --background-activated: #a3e681;
+    --background-hover: #a3e681;
+    --color: rgb(255, 255, 255);
+  }

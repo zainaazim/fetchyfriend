@@ -1,5 +1,5 @@
 --Readme document for 
-Brandon Chan | email | student id
+Brandon Chan | chanbz | 12383908
 Zaina Azim | zazim@uci.edu | 61308152--
 
 1. How many assignment points do you believe you completed (replace the *'s with your numbers)?
